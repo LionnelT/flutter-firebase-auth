@@ -73,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Login Screen"),
         backgroundColor: Colors.black,
       ),
@@ -93,13 +94,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: passwordField,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 25),
                     child: loginButton,
                   ),
                   Row(
+
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Dont have an account"),
+                      const Text("Dont have an account?"),
+                      const SizedBox(width: 15,),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupScreen()));
